@@ -12,6 +12,9 @@ class ViewController: UIViewController {
   @IBOutlet weak var collectionView: UICollectionView!
   let dataSource = DataSource()
   let delegate = EmojiCollectionViewDelegate(numberOfItemsPerRow: 6, interItemSpacing: 8)
+  
+  var addBarButtonItem: UIBarButtonItem!
+  var deleteBarButtonItem: UIBarButtonItem!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,12 +22,21 @@ class ViewController: UIViewController {
     collectionView.dataSource = dataSource
     collectionView.delegate = delegate
     
-    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewEmoji))
+    collectionView.allowsMultipleSelection = true
+    
+    addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewEmoji))
+    deleteBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteEmoji))
+    deleteBarButtonItem.isEnabled = false
+    
+    navigationItem.rightBarButtonItems = [addBarButtonItem, deleteBarButtonItem]
     navigationItem.leftBarButtonItem = editButtonItem
   }
   
   override func setEditing(_ editing: Bool, animated: Bool) {
     super.setEditing(editing, animated: animated)
+    
+    deleteBarButtonItem.isEnabled = isEditing
+    addBarButtonItem.isEnabled = !isEditing
     
     collectionView.indexPathsForVisibleItems.forEach {
       guard let emojiCell = collectionView.cellForItem(at: $0) as? EmojiCell else { return }
@@ -62,6 +74,19 @@ class ViewController: UIViewController {
     let emojiInSection = collectionView.numberOfItems(inSection: 0)
     let insertedIndex = IndexPath(item: emojiInSection, section: 0)
     collectionView.insertItems(at: [insertedIndex])
+  }
+  
+  @objc func deleteEmoji() {
+    guard let selectedIndices = collectionView.indexPathsForSelectedItems else { return }
+    
+    let sectionsWithSelectedItem = Set(selectedIndices.map({ $0.section }))
+    sectionsWithSelectedItem.forEach { section in
+      let indexPathForSection = selectedIndices.filter({ $0.section == section })
+      let sortedIndexPaths = indexPathForSection.sorted(by: { $0.item > $1.item })
+      
+      dataSource.deleteEmojis(at: sortedIndexPaths)
+      collectionView.deleteItems(at: sortedIndexPaths)
+    }
   }
 
 }
