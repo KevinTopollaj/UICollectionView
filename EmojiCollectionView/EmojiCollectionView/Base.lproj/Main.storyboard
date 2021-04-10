@@ -49,6 +49,7 @@
                                         </collectionViewCellContentView>
                                         <connections>
                                             <outlet property="emojiLabel" destination="o0a-B3-qtE" id="C3t-oW-atC"/>
+                                            <segue destination="txI-mD-MdH" kind="show" identifier="showEmojiDetail" id="4ar-Rj-42c"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -91,6 +92,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="93.75"/>
+        </scene>
+        <!--Emoji Detail Controller-->
+        <scene sceneID="2sC-Lk-kvn">
+            <objects>
+                <viewController id="txI-mD-MdH" customClass="EmojiDetailController" customModule="EmojiCollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ah-m5-66F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bde-hO-Aun">
+                                <rect key="frame" x="164" y="400.5" width="86" height="95.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PJX-PQ-4Xn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bde-hO-Aun" firstAttribute="centerX" secondItem="7Ah-m5-66F" secondAttribute="centerX" id="3U5-Bj-jee"/>
+                            <constraint firstItem="bde-hO-Aun" firstAttribute="centerY" secondItem="7Ah-m5-66F" secondAttribute="centerY" id="C8x-GZ-B3b"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jhh-zF-lcs"/>
+                    <connections>
+                        <outlet property="textLabel" destination="bde-hO-Aun" id="Cgu-5t-txe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X4M-2y-QZd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1814" y="94"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ccW-79-50x">
