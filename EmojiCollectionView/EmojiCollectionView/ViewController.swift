@@ -20,6 +20,29 @@ class ViewController: UIViewController {
     collectionView.delegate = delegate
     
     navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewEmoji))
+    navigationItem.leftBarButtonItem = editButtonItem
+  }
+  
+  override func setEditing(_ editing: Bool, animated: Bool) {
+    super.setEditing(editing, animated: animated)
+    
+    collectionView.indexPathsForVisibleItems.forEach {
+      guard let emojiCell = collectionView.cellForItem(at: $0) as? EmojiCell else { return }
+      emojiCell.isEditing = editing
+    }
+    
+    if !isEditing {
+      collectionView.indexPathsForSelectedItems?.compactMap({ $0 }).forEach {
+        collectionView.deselectItem(at: $0, animated: true)
+      }
+    }
+  }
+  
+  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    if isEditing && identifier == "showEmojiDetail" {
+      return false
+    }
+    return true
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

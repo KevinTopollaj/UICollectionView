@@ -12,4 +12,16 @@ class EmojiCell: UICollectionViewCell {
   
   @IBOutlet weak var emojiLabel: UILabel!
   
+  var isEditing: Bool = false
+  
+  override var isSelected: Bool {
+    didSet {
+      if isEditing {
+        contentView.backgroundColor = isSelected ? UIColor.systemRed.withAlphaComponent(0.5) : UIColor.systemGray3
+      } else {
+        contentView.backgroundColor = UIColor.systemGray3
+      }
+    }
+  }
+  
 }
