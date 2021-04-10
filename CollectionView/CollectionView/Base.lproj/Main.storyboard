@@ -35,16 +35,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhc-59-oD4">
-                                                    <rect key="frame" x="8" y="11.5" width="398" height="21"/>
+                                                    <rect key="frame" x="186.5" y="11.5" width="41.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="dhc-59-oD4" secondAttribute="trailing" constant="8" id="aVd-2a-lf2"/>
-                                                <constraint firstItem="dhc-59-oD4" firstAttribute="leading" secondItem="VFf-KG-gNe" secondAttribute="leading" constant="8" id="fPN-BB-GDi"/>
-                                                <constraint firstItem="dhc-59-oD4" firstAttribute="centerY" secondItem="VFf-KG-gNe" secondAttribute="centerY" id="kFE-Np-HsV"/>
+                                                <constraint firstItem="dhc-59-oD4" firstAttribute="centerX" secondItem="VFf-KG-gNe" secondAttribute="centerX" id="2iy-58-Njj"/>
+                                                <constraint firstItem="dhc-59-oD4" firstAttribute="centerY" secondItem="VFf-KG-gNe" secondAttribute="centerY" id="5tS-IB-YFh"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="44"/>
