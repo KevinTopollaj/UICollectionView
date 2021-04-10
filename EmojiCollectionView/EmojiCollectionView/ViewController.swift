@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     collectionView.dataSource = dataSource
     collectionView.delegate = delegate
+    
+    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewEmoji))
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -29,6 +31,14 @@ class ViewController: UIViewController {
           else { return }
     
     emojiDetailController.emoji = emoji
+  }
+  
+  @objc func addNewEmoji() {
+    let (category, randomEmoji) = Emoji.randomEmoji()
+    dataSource.addEmoji(randomEmoji, to: category)
+    let emojiInSection = collectionView.numberOfItems(inSection: 0)
+    let insertedIndex = IndexPath(item: emojiInSection, section: 0)
+    collectionView.insertItems(at: [insertedIndex])
   }
 
 }

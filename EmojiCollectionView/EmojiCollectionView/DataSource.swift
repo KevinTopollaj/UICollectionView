@@ -23,9 +23,11 @@ class DataSource: NSObject, UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let emojiCell = collectionView.dequeueReusableCell(withReuseIdentifier: EmojiCell.reuseIdentifier, for: indexPath) as? EmojiCell else { fatalError("Cell can not be created") }
+    
     let category = emoji.sections[indexPath.section]
     let emoji = self.emoji.data[category]?[indexPath.item] ?? ""
     emojiCell.emojiLabel.text = emoji
+    
     return emojiCell
   }
   
@@ -38,5 +40,13 @@ class DataSource: NSObject, UICollectionViewDataSource {
     emojiHeaderView.textLabel.text = category.rawValue
     
     return emojiHeaderView
+  }
+}
+
+extension DataSource {
+  func addEmoji(_ emoji: String, to category: Emoji.Category) {
+    guard var emojiData = self.emoji.data[category] else { return }
+    emojiData.append(emoji)
+    self.emoji.data.updateValue(emojiData, forKey: category)
   }
 }
