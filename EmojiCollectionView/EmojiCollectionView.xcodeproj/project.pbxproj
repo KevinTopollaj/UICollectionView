@@ -17,6 +17,7 @@
 		1FA8A202262218F600B66021 /* EmojiDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8A201262218F600B66021 /* EmojiDetailController.swift */; };
 		1FA8A2052622198400B66021 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8A2042622198400B66021 /* Emoji.swift */; };
 		1FA8A20A26221FE500B66021 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8A20926221FE500B66021 /* DataSource.swift */; };
+		1FA8A20E262224A300B66021 /* EmojiCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA8A20D262224A300B66021 /* EmojiCollectionViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1FA8A201262218F600B66021 /* EmojiDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiDetailController.swift; sourceTree = "<group>"; };
 		1FA8A2042622198400B66021 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		1FA8A20926221FE500B66021 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		1FA8A20D262224A300B66021 /* EmojiCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCollectionViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				1FA8A1FD262217F600B66021 /* EmojiCell.swift */,
 				1FA8A2042622198400B66021 /* Emoji.swift */,
 				1FA8A20926221FE500B66021 /* DataSource.swift */,
+				1FA8A20D262224A300B66021 /* EmojiCollectionViewDelegate.swift */,
 				1FA8A1EC2621EAEF00B66021 /* Main.storyboard */,
 				1FA8A1EF2621EAEF00B66021 /* Assets.xcassets */,
 				1FA8A1F12621EAF000B66021 /* LaunchScreen.storyboard */,
@@ -155,6 +158,7 @@
 				1FA8A1E72621EAEF00B66021 /* AppDelegate.swift in Sources */,
 				1FA8A1FE262217F600B66021 /* EmojiCell.swift in Sources */,
 				1FA8A1E92621EAEF00B66021 /* SceneDelegate.swift in Sources */,
+				1FA8A20E262224A300B66021 /* EmojiCollectionViewDelegate.swift in Sources */,
 				1FA8A202262218F600B66021 /* EmojiDetailController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
