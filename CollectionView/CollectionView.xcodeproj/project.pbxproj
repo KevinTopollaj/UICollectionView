@@ -61,11 +61,11 @@
 				1F88CF112622547A000FAE22 /* AppDelegate.swift */,
 				1F88CF132622547A000FAE22 /* SceneDelegate.swift */,
 				1F88CF152622547A000FAE22 /* ViewController.swift */,
+				1F88CF2A26225A10000FAE22 /* NumberCell.swift */,
 				1F88CF172622547A000FAE22 /* Main.storyboard */,
 				1F88CF1A2622547B000FAE22 /* Assets.xcassets */,
 				1F88CF1C2622547B000FAE22 /* LaunchScreen.storyboard */,
 				1F88CF1F2622547B000FAE22 /* Info.plist */,
-				1F88CF2A26225A10000FAE22 /* NumberCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
